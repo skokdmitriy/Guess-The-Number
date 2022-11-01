@@ -7,12 +7,9 @@
 
 import Foundation
 
-class Guesser {
-    var number: Int
-    var attemptCount: Int = 1
+struct Guesser {
+    var number: Int = 0
+    var attemptCount: Int = 1 
     var numberGuessed: Bool = false
-    
-    init(number: Int) {
-        self.number = number
-    }
+
 }

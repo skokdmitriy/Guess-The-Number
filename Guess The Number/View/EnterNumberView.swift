@@ -11,25 +11,8 @@ class EnterNumberView: UIView {
     
     //    MARK: - Subviews
     
-    private(set) lazy var numberTextField: UITextField = {
-        let textField = UITextField ()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Guess the number"
-        textField.borderStyle = .roundedRect
-        textField.keyboardType = .numberPad
-        textField.returnKeyType = .done
-        textField.textAlignment = .center
-        return textField
-    }()
-    
-    private(set) lazy var enterNumberButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Enter the Number", for: .normal)
-        button.backgroundColor = UIColor.systemBlue
-        button.layer.cornerRadius = 15.0
-        return button
-    }()
+    let numberTextField = UITextField(placeholder: "Guess the number")
+    let enterNumberButton = UIButton(title: "Enter the Number", titleColor: .white, backgroundColor: .systemBlue, font: .avenir20())
     
     //    MARK: - Init
     

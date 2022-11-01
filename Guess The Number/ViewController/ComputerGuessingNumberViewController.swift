@@ -19,6 +19,7 @@ class ComputerGuessingNumberViewController: UIViewController {
     
     var game = GuessTheNumber()
     
+    
     override func loadView() {
         super.loadView()
         self.view = computerGuessingNumber
@@ -54,11 +55,13 @@ class ComputerGuessingNumberViewController: UIViewController {
             case .greater:
                 game.minNumber = game.computer.number
                 game.computer.attemptCount += 1
+                print(game.computer.attemptCount)
                 let number = (game.minNumber + game.maxNumber) / 2
                 game.computer.number = number
             case .less:
                 game.maxNumber = game.computer.number
                 game.computer.attemptCount += 1
+                print(game.computer.attemptCount)
                 let number = (game.minNumber + game.maxNumber) / 2
                 game.computer.number = number
             case .equal:
@@ -83,12 +86,10 @@ class ComputerGuessingNumberViewController: UIViewController {
     
     @objc private func greaterButtonPressed(_ sender: UIButton) {
         validateComputerAnswer(answer: .greater)
-        view.setNeedsLayout()
     }
     
     @objc private func lessButtonPressed(_ sender: UIButton) {
         validateComputerAnswer(answer: .less)
-        view.setNeedsLayout()
 
     }
     

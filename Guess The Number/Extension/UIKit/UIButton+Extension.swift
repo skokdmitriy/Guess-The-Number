@@ -22,6 +22,7 @@ extension UIButton {
         self.backgroundColor = backgroundColor
         self.titleLabel?.font = font
         self.layer.cornerRadius = cornerRadius
+        self.translatesAutoresizingMaskIntoConstraints = false
         
         if isShadow {
             self.layer.shadowColor = UIColor.black.cgColor

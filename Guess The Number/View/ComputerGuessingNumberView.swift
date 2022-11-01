@@ -11,45 +11,11 @@ class ComputerGuessingNumberView: UIView {
     
     //    MARK: - Subviews
     
-    lazy var numberOfGuessLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 20.0)
-        label.numberOfLines = 1
-        label.text = "Try №"
-        return label
-    }()
+    let numberOfGuessLabel = UILabel(text: "Try №", font: .avenir26())
+    let computerGuessesLabel = UILabel(text: "Computer is guessing", font: .avenir26())
+    let guessesLabel = UILabel(text: "Your number is: ", font: .avenir26())
+    let numberIsLabel = UILabel(text: "My number is ...", font: .avenir20())
     
-    private lazy var computerGuessesLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 20.0)
-        label.numberOfLines = 1
-        label.text = "Computer is guessing"
-        return label
-    }()
-    
-    lazy var guessesLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 20.0)
-        label.numberOfLines = 1
-        label.text = "Your number is: "
-        return label
-    }()
-    
-    private lazy var numberIsLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 20.0)
-        label.numberOfLines = 1
-        label.text = "My number is ..."
-        return label
-    }()
     
     lazy var greaterButton: UIButton = {
         let button = UIButton()

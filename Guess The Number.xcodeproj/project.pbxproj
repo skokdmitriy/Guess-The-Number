@@ -14,6 +14,7 @@
 		1B9672F828E0A384004A2A02 /* GuessTheNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9672F728E0A383004A2A02 /* GuessTheNumber.swift */; };
 		1B96730028E0AA95004A2A02 /* StartGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9672FF28E0AA95004A2A02 /* StartGameView.swift */; };
 		1BD13FC8290EA23200DEF1C1 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD13FC7290EA23200DEF1C1 /* UILabel+Extension.swift */; };
+		1BE623E4290EC17A00B36537 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE623E3290EC17A00B36537 /* UITextField+Extension.swift */; };
 		1BF84033290DAA4700CC2697 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF84032290DAA4700CC2697 /* UIButton+Extension.swift */; };
 		1BF84035290E8F7300CC2697 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF84034290E8F7200CC2697 /* UIFont+Extension.swift */; };
 		1BFFB28C28E0CC0A0020D1EB /* EnterNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFFB28B28E0CC090020D1EB /* EnterNumberView.swift */; };
@@ -35,6 +36,7 @@
 		1B9672F728E0A383004A2A02 /* GuessTheNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheNumber.swift; sourceTree = "<group>"; };
 		1B9672FF28E0AA95004A2A02 /* StartGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameView.swift; sourceTree = "<group>"; };
 		1BD13FC7290EA23200DEF1C1 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		1BE623E3290EC17A00B36537 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		1BF84032290DAA4700CC2697 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		1BF84034290E8F7200CC2697 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		1BFFB28B28E0CC090020D1EB /* EnterNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNumberView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				1BF84032290DAA4700CC2697 /* UIButton+Extension.swift */,
 				1BD13FC7290EA23200DEF1C1 /* UILabel+Extension.swift */,
 				1BF84034290E8F7200CC2697 /* UIFont+Extension.swift */,
+				1BE623E3290EC17A00B36537 /* UITextField+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				1BD13FC8290EA23200DEF1C1 /* UILabel+Extension.swift in Sources */,
 				1BFFB28C28E0CC0A0020D1EB /* EnterNumberView.swift in Sources */,
 				1BFFB29828E3654A0020D1EB /* ComputerGuessingNumberViewController.swift in Sources */,
+				1BE623E4290EC17A00B36537 /* UITextField+Extension.swift in Sources */,
 				1BFFB28E28E0D0080020D1EB /* EnterNumberViewController.swift in Sources */,
 				1BF84033290DAA4700CC2697 /* UIButton+Extension.swift in Sources */,
 				1B96730028E0AA95004A2A02 /* StartGameView.swift in Sources */,

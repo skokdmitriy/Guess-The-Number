@@ -31,9 +31,6 @@ class StartGameView: UIView {
         addSubview(startTitleLabel)
         addSubview(startGameButton)
         
-        startTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        startGameButton.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             startTitleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 150),
             startTitleLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
