@@ -37,4 +37,3 @@ class StartGameViewController: UIViewController {
         print("Start View Controller deinit")
     }
 }
-

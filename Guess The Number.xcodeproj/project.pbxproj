@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B3D0D852917CFC700033C2C /* PlayerGuessingNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D0D842917CFC700033C2C /* PlayerGuessingNumberView.swift */; };
+		1B3D0D872917E19A00033C2C /* ResultGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D0D862917E19A00033C2C /* ResultGameView.swift */; };
+		1B3D0D8B2917E48200033C2C /* PlayerGuessingNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D0D8A2917E48200033C2C /* PlayerGuessingNumberViewController.swift */; };
 		1B9672DA28E09C68004A2A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9672D928E09C68004A2A02 /* AppDelegate.swift */; };
 		1B9672E328E09C73004A2A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B9672E228E09C73004A2A02 /* Assets.xcassets */; };
 		1B9672E628E09C73004A2A02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B9672E428E09C73004A2A02 /* LaunchScreen.storyboard */; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B3D0D842917CFC700033C2C /* PlayerGuessingNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGuessingNumberView.swift; sourceTree = "<group>"; };
+		1B3D0D862917E19A00033C2C /* ResultGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGameView.swift; sourceTree = "<group>"; };
+		1B3D0D8A2917E48200033C2C /* PlayerGuessingNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGuessingNumberViewController.swift; sourceTree = "<group>"; };
 		1B9672D628E09C68004A2A02 /* Guess The Number.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess The Number.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B9672D928E09C68004A2A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B9672E228E09C73004A2A02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 				1B9672F428E0A2E1004A2A02 /* StartGameViewController.swift */,
 				1BFFB28D28E0D0080020D1EB /* EnterNumberViewController.swift */,
 				1BFFB29728E3654A0020D1EB /* ComputerGuessingNumberViewController.swift */,
+				1B3D0D8A2917E48200033C2C /* PlayerGuessingNumberViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -140,6 +147,8 @@
 				1B9672FF28E0AA95004A2A02 /* StartGameView.swift */,
 				1BFFB28B28E0CC090020D1EB /* EnterNumberView.swift */,
 				1BFFB29528E347E80020D1EB /* ComputerGuessingNumberView.swift */,
+				1B3D0D842917CFC700033C2C /* PlayerGuessingNumberView.swift */,
+				1B3D0D862917E19A00033C2C /* ResultGameView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,8 +253,10 @@
 			files = (
 				1B9672F828E0A384004A2A02 /* GuessTheNumber.swift in Sources */,
 				1BFFB29628E347E80020D1EB /* ComputerGuessingNumberView.swift in Sources */,
+				1B3D0D852917CFC700033C2C /* PlayerGuessingNumberView.swift in Sources */,
 				1BD13FC8290EA23200DEF1C1 /* UILabel+Extension.swift in Sources */,
 				1BFFB28C28E0CC0A0020D1EB /* EnterNumberView.swift in Sources */,
+				1B3D0D8B2917E48200033C2C /* PlayerGuessingNumberViewController.swift in Sources */,
 				1BFFB29828E3654A0020D1EB /* ComputerGuessingNumberViewController.swift in Sources */,
 				1BE623E4290EC17A00B36537 /* UITextField+Extension.swift in Sources */,
 				1BFFB28E28E0D0080020D1EB /* EnterNumberViewController.swift in Sources */,
@@ -253,6 +264,7 @@
 				1B96730028E0AA95004A2A02 /* StartGameView.swift in Sources */,
 				1BFFB29028E203DF0020D1EB /* AlertController.swift in Sources */,
 				1BFFB29B28E4A7C00020D1EB /* MainButton.swift in Sources */,
+				1B3D0D872917E19A00033C2C /* ResultGameView.swift in Sources */,
 				1B9672DA28E09C68004A2A02 /* AppDelegate.swift in Sources */,
 				1BF84035290E8F7300CC2697 /* UIFont+Extension.swift in Sources */,
 				1BFFB29228E207200020D1EB /* Guesser.swift in Sources */,
