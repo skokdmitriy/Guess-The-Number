@@ -83,12 +83,10 @@ class ComputerGuessingNumberViewController: UIViewController {
     
     @objc private func greaterButtonPressed(_ sender: UIButton) {
         validateComputerAnswer(answer: .greater)
-        view.setNeedsLayout()
     }
     
     @objc private func lessButtonPressed(_ sender: UIButton) {
         validateComputerAnswer(answer: .less)
-        view.setNeedsLayout()
 
     }
     
@@ -100,7 +98,10 @@ class ComputerGuessingNumberViewController: UIViewController {
     }
     
     func playerGuessingNumber() {
-        
+        let viewController = PlayerGuessingNumberViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        viewController.modalTransitionStyle = .coverVertical
+        present(viewController, animated: true)
     }
     
     private func errorAlert(message: String) {
