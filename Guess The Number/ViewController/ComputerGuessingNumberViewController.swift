@@ -6,18 +6,14 @@
 //
 
 import UIKit
-
-enum NumberValid: String {
-    case greater
-    case less
-    case equal
-}
+import Combine
 
 class ComputerGuessingNumberViewController: UIViewController {
     
     private lazy var computerGuessingNumber = ComputerGuessingNumberView()
+    private var subscriptions = Set<AnyCancellable>()
     
-    var game = GuessTheNumber()
+    var viewModel = GameViewModel()
     
     override func loadView() {
         super.loadView()
@@ -28,9 +24,7 @@ class ComputerGuessingNumberViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        game.computer.number = generateRandomNumber()
-//        print(game.computer.number)
-        print(game.player.number)
+        viewModel.game.computer.number = viewModel.generateRandomNumber()
         
         setup()
         
@@ -38,61 +32,38 @@ class ComputerGuessingNumberViewController: UIViewController {
         computerGuessingNumber.greaterButton.addTarget(self, action: #selector(greaterButtonPressed(_:)), for: .touchUpInside)
         computerGuessingNumber.lessButton.addTarget(self, action: #selector(lessButtonPressed(_:)), for: .touchUpInside)
     }
-    
-    func generateRandomNumber() -> Int {
-        return Int.random(in: game.minNumber...game.maxNumber)
-    }
-    
+
     func setup () {
-        self.computerGuessingNumber.guessesLabel.text = "Your number is: \(game.computer.number)?"
-        self.computerGuessingNumber.numberOfGuessLabel.text = "Try № \(game.computer.attemptCount)"
-    }
-    
-    func validateComputerAnswer(answer: NumberValid) {
-        if answerIsCorrect(answer: answer) {
-            switch answer {
-            case .greater:
-                game.minNumber = game.computer.number
-                game.computer.attemptCount += 1
-                let number = (game.minNumber + game.maxNumber) / 2
-                game.computer.number = number
-            case .less:
-                game.maxNumber = game.computer.number
-                game.computer.attemptCount += 1
-                let number = (game.minNumber + game.maxNumber) / 2
-                game.computer.number = number
-            case .equal:
-                game.player.numberGuessed = true
+        viewModel.$error
+            .sink { error in
+                DispatchQueue.main.async {
+                    guard let errorDescription = self.viewModel.error else { return }
+                    let alertController = self.getGameAlert(title: "Tricky bug", message: errorDescription)
+                    self.present(alertController, animated: true)
+                }
             }
-        }
+            .store(in: &subscriptions)
+        
+        viewModel.$game
+            .sink { game in
+                self.computerGuessingNumber.guessesLabel.text = "Your number is: \(game.computer.number)?"
+                self.computerGuessingNumber.numberOfGuessLabel.text = "Try №\(game.computer.attemptCount)"
+            }
+            .store(in: &subscriptions)
     }
-    
-    func answerIsCorrect(answer: NumberValid) -> Bool {
-        if answer == .less && game.player.number >= game.computer.number {
-            errorAlert(message: "The hidden number is not less than what the computer indicated")
-            return false
-        } else if answer == .greater && game.player.number <= game.computer.number {
-            errorAlert(message: "The hidden number is not greater than what the computer indicated")
-            return false
-        } else if answer == .equal && game.player.number != game.computer.number {
-            errorAlert(message: "The hidden number is not equal than what the computer indicated")
-            return false
-        }
-        return true
-    }
-    
+                   
+
     @objc private func greaterButtonPressed(_ sender: UIButton) {
-        validateComputerAnswer(answer: .greater)
+            viewModel.validateComputerAnswer(answer: .greater)
     }
     
     @objc private func lessButtonPressed(_ sender: UIButton) {
-        validateComputerAnswer(answer: .less)
-
+            viewModel.validateComputerAnswer(answer: .less)
     }
     
     @objc private func equalButtonPressed(_ sender: UIButton){
-        validateComputerAnswer(answer: .equal)
-        if game.player.numberGuessed == true {
+            viewModel.validateComputerAnswer(answer: .equal)
+        if viewModel.game.player.numberGuessed == true {
             playerGuessingNumber()
         }
     }
@@ -104,8 +75,10 @@ class ComputerGuessingNumberViewController: UIViewController {
         present(viewController, animated: true)
     }
     
-    private func errorAlert(message: String) {
-        let alert = AlertController(title: "Error", message: message)
-        present(alert, animated: true)
+    func getGameAlert(title: String, message: String?) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let actionOK = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(actionOK)
+        return alert
     }
 }

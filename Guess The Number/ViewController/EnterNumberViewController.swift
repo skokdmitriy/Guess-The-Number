@@ -10,6 +10,7 @@ import UIKit
 class EnterNumberViewController: UIViewController {
     
     private lazy var enterNumberView = EnterNumberView()
+    var viewModel = GameViewModel()
     var game = GuessTheNumber()
     let viewController = ComputerGuessingNumberViewController()
 
@@ -34,9 +35,7 @@ class EnterNumberViewController: UIViewController {
         guard let inputValue = enterNumberView.numberTextField.text else { return }
         if let number = Int(inputValue) {
             if number >= 1 && number <= 100 {
-                game.player.number = number
-                viewController.game.player.number = number
-                print(game.player.number)
+                viewModel.game.player.number = number
                 computerGuessingNumber()
             } else {
                 showErrorAlert()
@@ -44,14 +43,14 @@ class EnterNumberViewController: UIViewController {
             }
         } else {
             showErrorAlert()
-            enterNumberView.numberTextField.text = ""
         }
     }
     
     // MARK: - Navigation
    
     private func computerGuessingNumber() {
-//        let viewController = ComputerGuessingNumberViewController()
+        let viewController = ComputerGuessingNumberViewController()
+        viewController.viewModel = self.viewModel
         viewController.modalPresentationStyle = .fullScreen
         viewController.modalTransitionStyle = .coverVertical
         present(viewController, animated: true)
