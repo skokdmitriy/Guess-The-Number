@@ -22,7 +22,8 @@ class ComputerGuessingNumberViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(viewModel.game.minNumber)
+
         view.backgroundColor = .white
         viewModel.game.computer.number = viewModel.generateRandomNumber()
         

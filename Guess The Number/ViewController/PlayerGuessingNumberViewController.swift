@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 class PlayerGuessingNumberViewController: UIViewController {
     
     private lazy var playerGuessingNumberView = PlayerGuessingNumberView()
+    private var subscriptions = Set<AnyCancellable>()
+    var viewModel = GameViewModel()
     
     override func loadView() {
         self.view = playerGuessingNumberView
@@ -18,11 +21,58 @@ class PlayerGuessingNumberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        viewModel.game.computer.number = viewModel.generateRandomNumber()
+        print (viewModel.game.computer.number)
+        setup()
+        
+        playerGuessingNumberView.guessNumberButton.addTarget(self, action: #selector(guessTheNumberButtonPressed(_:)), for: .touchUpInside)
+    }
+    
+    private func setup() {
+        viewModel.$game
+            .sink { game in
+                self.playerGuessingNumberView.numberOfGuessLabel.text = "Try №\(game.player.attemptCount)"
+            }
+            .store(in: &subscriptions)
+    }
+    
+    private func validateResponse(response: NumberValid) {
+        if response != .equal {
+            playerGuessingNumberView.resultLabel.text = "No my number is \(response.rawValue) than yours"
+            playerGuessingNumberView.numberTextField.text = ""
+        } else {
+            resultView()
+        }
+    }
+    
+    @objc func guessTheNumberButtonPressed(_ sender: UIButton) {
+        guard let inputValue = playerGuessingNumberView.numberTextField.text else { return }
+        if let number = Int(inputValue) {
+            if number >= 1 && number <= 100 {
+                let result = viewModel.validatePlayerAnswer(guess: number)
+                validateResponse(response: result)
+            } else {
+                showErrorAlert()
+            }
+        } else {
+                showErrorAlert()
+        }
     }
     
     
-    
     // MARK: - Navigation
+   private func resultView() {
+       print ("Go")
+    }
+    
+    private func showErrorAlert() {
+        let alert = AlertController(title: "Error", message: "Please enter a number from 1 to 100")
+        present(alert, animated: true)
+    }
+}
 
-
+extension PlayerGuessingNumberViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }

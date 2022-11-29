@@ -37,6 +37,19 @@ class GameViewModel {
         }
     }
     
+    func validatePlayerAnswer(guess: Int) -> NumberValid {
+        if game.computer.number < guess {
+            game.player.attemptCount += 1
+            return .less
+        } else if game.computer.number > guess {
+            game.player.attemptCount += 1
+            return .greater
+        } else {
+            game.player.numberGuessed = true
+            return .equal
+        }
+    }
+    
     func answerIsCorrect(answer: NumberValid) -> Bool {
         if answer == .less && game.player.number >= game.computer.number {
             error = "The hidden number is not less than what the computer indicated"

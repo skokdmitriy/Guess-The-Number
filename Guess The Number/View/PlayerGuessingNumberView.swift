@@ -12,7 +12,7 @@ class PlayerGuessingNumberView: UIView {
     let numberOfGuessLabel = UILabel(text: "Try №", font: .avenir26())
     let playerGuessLabel =  UILabel(text: "You are guessing", font: .avenir26())
     let resultLabel = UILabel(text: "Enter number", font: .avenir26())
-    let numberTextField = UITextField(placeholder: "enter")
+    let numberTextField = UITextField(placeholder: "Enter")
     let guessNumberButton = UIButton(title: "Guess", titleColor: .white, backgroundColor: .systemBlue, font: .avenir20())
     
     override init(frame: CGRect) {

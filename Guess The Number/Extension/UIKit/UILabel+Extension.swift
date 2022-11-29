@@ -13,5 +13,6 @@ extension UILabel {
         self.text = text
         self.font = font
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.numberOfLines = 0
     }
 }
