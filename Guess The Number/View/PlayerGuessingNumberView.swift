@@ -41,7 +41,13 @@ class PlayerGuessingNumberView: UIView {
             playerGuessLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             playerGuessLabel.topAnchor.constraint(equalTo: numberOfGuessLabel.bottomAnchor, constant: 10),
             playerGuessLabel.bottomAnchor.constraint(lessThanOrEqualTo: numberTextField.topAnchor),
-
+            
+            resultLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            resultLabel.bottomAnchor.constraint(equalTo: numberTextField.topAnchor, constant: -20),
+            resultLabel.topAnchor.constraint(equalTo: playerGuessLabel.bottomAnchor, constant: 100),
+            resultLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            resultLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            
             numberTextField.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             numberTextField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
             numberTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
@@ -53,8 +59,6 @@ class PlayerGuessingNumberView: UIView {
             guessNumberButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
             guessNumberButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
 
-            resultLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            resultLabel.topAnchor.constraint(equalTo: numberTextField.topAnchor, constant: -50),
         ])
     }
     
