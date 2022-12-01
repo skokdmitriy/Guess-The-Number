@@ -23,16 +23,18 @@ class GameViewModel {
                 game.minNumber = game.computer.number
                 game.computer.attemptCount += 1
                 let number = (game.minNumber + game.maxNumber) / 2
-                print(number)
+                print(game.computer.attemptCount)
                 game.computer.number = number
             case .less:
                 game.maxNumber = game.computer.number
                 game.computer.attemptCount += 1
                 let number = (game.minNumber + game.maxNumber) / 2
-                print(number)
+                print(game.computer.attemptCount)
                 game.computer.number = number
             case .equal:
                 game.player.numberGuessed = true
+                print(game.computer.attemptCount)
+
             }
         }
     }
