@@ -9,24 +9,23 @@ import UIKit
 
 class StartGameViewController: UIViewController {
     
+    // MARK: - Private properties
     private lazy var startGameView = StartGameView()
         
+    // MARK: - Override methods
     override func loadView() {
         super.loadView()
-        
         self.view = startGameView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
+        
+        view.backgroundColor = .white
         startGameView.startGameButton.addTarget(self, action: #selector(startGameButton(_:)), for: .touchUpInside)
     }
     
-    private func configureUI() {
-        view.backgroundColor = .white
-    }
-    
+    // MARK: - Navigation
     @objc private func startGameButton(_ sender: UIButton) {
         let viewController = EnterNumberViewController()
         viewController.modalPresentationStyle = .fullScreen

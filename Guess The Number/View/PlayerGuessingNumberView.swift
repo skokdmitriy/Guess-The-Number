@@ -9,23 +9,24 @@ import UIKit
 
 class PlayerGuessingNumberView: UIView {
     
+    //    MARK: - Subviews
     let numberOfGuessLabel = UILabel(text: "Try №", font: .avenir26())
     let playerGuessLabel =  UILabel(text: "You are guessing", font: .avenir26())
     let resultLabel = UILabel(text: "Enter number", font: .avenir26())
     let numberTextField = UITextField(placeholder: "Enter")
     let guessNumberButton = UIButton(title: "Guess", titleColor: .white, backgroundColor: .systemBlue, font: .avenir20())
     
+    //    MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupView()
-        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //    MARK: - UI
     private func setupView() {
         addSubview(numberOfGuessLabel)
         addSubview(playerGuessLabel)
@@ -37,7 +38,7 @@ class PlayerGuessingNumberView: UIView {
             numberOfGuessLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             numberOfGuessLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),
             numberOfGuessLabel.bottomAnchor.constraint(lessThanOrEqualTo: playerGuessLabel.topAnchor),
-
+            
             playerGuessLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             playerGuessLabel.topAnchor.constraint(equalTo: numberOfGuessLabel.bottomAnchor, constant: 10),
             playerGuessLabel.bottomAnchor.constraint(lessThanOrEqualTo: numberTextField.topAnchor),
@@ -52,20 +53,12 @@ class PlayerGuessingNumberView: UIView {
             numberTextField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
             numberTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
             numberTextField.bottomAnchor.constraint(lessThanOrEqualTo: guessNumberButton.topAnchor, constant: -40),
-
+            
             guessNumberButton.heightAnchor.constraint(equalToConstant: 48),
             guessNumberButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             guessNumberButton.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor, constant: 20),
             guessNumberButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
             guessNumberButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
-
         ])
     }
-    
-    private func setupConstraints() {
-    
-    }
-
 }
-
-

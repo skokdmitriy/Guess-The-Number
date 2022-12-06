@@ -10,7 +10,6 @@ import UIKit
 class ComputerGuessingNumberView: UIView {
     
     //    MARK: - Subviews
-    
     let numberOfGuessLabel = UILabel(text: "Try №", font: .avenir26())
     let computerGuessesLabel = UILabel(text: "Computer is guessing", font: .avenir26())
     let guessesLabel = UILabel(text: "Your number is: ", font: .avenir26())
@@ -67,6 +66,7 @@ class ComputerGuessingNumberView: UIView {
         return stackView
     }()
     
+    //    MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
@@ -75,7 +75,7 @@ class ComputerGuessingNumberView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    //    MARK: - UI
     private func setupLayout() {
         addSubview(numberOfGuessLabel)
         addSubview(computerGuessesLabel)

@@ -9,24 +9,28 @@ import UIKit
 
 class ResultGameViewController: UIViewController {
     
+    // MARK: - Private properties
     private lazy var resultGameView = ResultGameView()
     
+    // MARK: - Public properties
     var viewModel = GameViewModel()
     
+    // MARK: - Override methods
     override func loadView() {
         self.view = resultGameView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        
         whoIsWinner()
         
         resultGameView.goToMainMenuButton.addTarget(self, action: #selector(goToMainButtonPressed(_:)), for: .touchUpInside)
-
     }
     
+    // MARK: - Private methods
     private func whoIsWinner() {
         let playerAttemptCount = viewModel.game.player.attemptCount
         let computerAttemptCount = viewModel.game.computer.attemptCount
@@ -36,6 +40,7 @@ class ResultGameViewController: UIViewController {
         resultGameView.winnerLabel.text = playerAttemptCount == computerAttemptCount ? "Friendship won" : winner
     }
     
+    // MARK: - @objc methods
     @objc private func goToMainButtonPressed(_ sender: UIButton) {
         goToStart()
     }
@@ -46,8 +51,6 @@ class ResultGameViewController: UIViewController {
     }
     
     deinit {
-        print("deallocated")
+        print("ResultGameViewController deinit")
     }
-
-
 }

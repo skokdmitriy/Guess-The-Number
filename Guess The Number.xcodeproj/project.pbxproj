@@ -29,7 +29,6 @@
 		1BFFB29228E207200020D1EB /* Guesser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFFB29128E207200020D1EB /* Guesser.swift */; };
 		1BFFB29628E347E80020D1EB /* ComputerGuessingNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFFB29528E347E80020D1EB /* ComputerGuessingNumberView.swift */; };
 		1BFFB29828E3654A0020D1EB /* ComputerGuessingNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFFB29728E3654A0020D1EB /* ComputerGuessingNumberViewController.swift */; };
-		1BFFB29B28E4A7C00020D1EB /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFFB29A28E4A7BF0020D1EB /* MainButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +56,6 @@
 		1BFFB29128E207200020D1EB /* Guesser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guesser.swift; sourceTree = "<group>"; };
 		1BFFB29528E347E80020D1EB /* ComputerGuessingNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerGuessingNumberView.swift; sourceTree = "<group>"; };
 		1BFFB29728E3654A0020D1EB /* ComputerGuessingNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerGuessingNumberViewController.swift; sourceTree = "<group>"; };
-		1BFFB29A28E4A7BF0020D1EB /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				1BFFB28F28E203DF0020D1EB /* AlertController.swift */,
-				1BFFB29A28E4A7BF0020D1EB /* MainButton.swift */,
 			);
 			path = ViewEement;
 			sourceTree = "<group>";
@@ -283,7 +280,6 @@
 				1BF84033290DAA4700CC2697 /* UIButton+Extension.swift in Sources */,
 				1B96730028E0AA95004A2A02 /* StartGameView.swift in Sources */,
 				1BFFB29028E203DF0020D1EB /* AlertController.swift in Sources */,
-				1BFFB29B28E4A7C00020D1EB /* MainButton.swift in Sources */,
 				1B3D0D872917E19A00033C2C /* ResultGameView.swift in Sources */,
 				1B9672DA28E09C68004A2A02 /* AppDelegate.swift in Sources */,
 				1BF84035290E8F7300CC2697 /* UIFont+Extension.swift in Sources */,

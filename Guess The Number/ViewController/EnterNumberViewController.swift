@@ -9,12 +9,13 @@ import UIKit
 
 class EnterNumberViewController: UIViewController {
     
+    // MARK: - Private properties
     private lazy var enterNumberView = EnterNumberView()
-    var viewModel = GameViewModel()
-    var game = GuessTheNumber()
-    let viewController = ComputerGuessingNumberViewController()
-
     
+    // MARK: - Public properties
+    var viewModel = GameViewModel()
+
+    // MARK: - Override methods
     override func loadView() {
         super.loadView()
         self.view = enterNumberView
@@ -23,12 +24,8 @@ class EnterNumberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureUI()
-        enterNumberView.enterNumberButton.addTarget(self, action: #selector(enterNumberButtonPressed(_:)), for: .touchUpInside)
-    }
-    
-    private func configureUI() {
         view.backgroundColor = .white
+        enterNumberView.enterNumberButton.addTarget(self, action: #selector(enterNumberButtonPressed(_:)), for: .touchUpInside)
     }
     
     @objc func enterNumberButtonPressed(_ sender: UIButton) {
@@ -47,7 +44,6 @@ class EnterNumberViewController: UIViewController {
     }
     
     // MARK: - Navigation
-   
     private func computerGuessingNumber() {
         let viewController = ComputerGuessingNumberViewController()
         viewController.viewModel = self.viewModel
@@ -68,6 +64,10 @@ class EnterNumberViewController: UIViewController {
             enterNumberView.enterNumberButton.isEnabled = false
 
         }
+    }
+    
+    deinit {
+        print("EnterNumberViewController deinit")
     }
 }
 
