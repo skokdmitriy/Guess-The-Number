@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = PlayerGuessingNumberViewController()
+        window?.rootViewController = StartGameViewController()
         return true
     }
 }

@@ -62,12 +62,20 @@ class PlayerGuessingNumberViewController: UIViewController {
     
     // MARK: - Navigation
    private func resultView() {
-       print ("Go")
+       let viewController = ResultGameViewController()
+       viewController.viewModel = self.viewModel
+       viewController.modalPresentationStyle = .fullScreen
+       
+       self.present(viewController, animated: true)
     }
     
     private func showErrorAlert() {
         let alert = AlertController(title: "Error", message: "Please enter a number from 1 to 100")
         present(alert, animated: true)
+    }
+    
+    deinit {
+        print("deallocated")
     }
 }
 

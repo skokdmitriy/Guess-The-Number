@@ -69,10 +69,11 @@ class ComputerGuessingNumberViewController: UIViewController {
         }
     }
     
-    func playerGuessingNumber() {
+   private func playerGuessingNumber() {
         let viewController = PlayerGuessingNumberViewController()
+        viewController.viewModel = self.viewModel
         viewController.modalPresentationStyle = .fullScreen
-        viewController.modalTransitionStyle = .coverVertical
+//        viewController.modalTransitionStyle = .coverVertical
         present(viewController, animated: true)
     }
     
