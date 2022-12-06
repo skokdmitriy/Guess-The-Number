@@ -8,12 +8,15 @@
 import UIKit
 
 class ResultGameView: UIView {
+    
+    //    MARK: - Subviews
     let scoresLabel = UILabel(text: "Scores:", font: .avenir26())
     let playerTriesCountLabel = UILabel(text: "Your's tries count: ", font: .avenir26())
     let computerTriesCountLabel = UILabel(text: "Computer's tries count: ", font: .avenir26())
     let winnerLabel = UILabel(text: "Win ", font: .avenir26())
     let goToMainMenuButton = UIButton(title: "Start over", titleColor: .white, backgroundColor: .systemBlue, font: .avenir20())
     
+    //    MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -33,6 +36,7 @@ class ResultGameView: UIView {
         addSubview(goToMainMenuButton)
     }
     
+    //    MARK: - UI
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             scoresLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),

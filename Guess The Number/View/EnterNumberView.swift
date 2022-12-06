@@ -10,12 +10,10 @@ import UIKit
 class EnterNumberView: UIView {
     
     //    MARK: - Subviews
-    
     let numberTextField = UITextField(placeholder: "Guess the number")
     let enterNumberButton = UIButton(title: "Enter the Number", titleColor: .white, backgroundColor: .systemBlue, font: .avenir20())
     
     //    MARK: - Init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
@@ -26,7 +24,6 @@ class EnterNumberView: UIView {
     }
     
     //    MARK: - UI
-    
     private func setupLayout() {
         addSubview(numberTextField)
         addSubview(enterNumberButton)

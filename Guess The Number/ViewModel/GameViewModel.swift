@@ -34,7 +34,6 @@ class GameViewModel {
             case .equal:
                 game.player.numberGuessed = true
                 print(game.computer.attemptCount)
-
             }
         }
     }
@@ -65,5 +64,4 @@ class GameViewModel {
         }
         return true
     }
-    
 }

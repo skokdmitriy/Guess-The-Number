@@ -10,12 +10,10 @@ import UIKit
 class StartGameView: UIView {
     
     //    MARK: - Subviews
-    
     let startTitleLabel = UILabel(text: "My Awesome Game", font: .avenir26())
     let startGameButton = UIButton(title: "Start New Game", titleColor: .white, backgroundColor: .systemBlue, font: .avenir20())
     
     //    MARK: - Init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
@@ -26,7 +24,6 @@ class StartGameView: UIView {
     }
     
     //    MARK: - UI
-    
     private func setupLayout() {
         addSubview(startTitleLabel)
         addSubview(startGameButton)

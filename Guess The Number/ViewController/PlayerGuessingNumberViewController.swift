@@ -10,11 +10,16 @@ import Combine
 
 class PlayerGuessingNumberViewController: UIViewController {
     
+    // MARK: - Private properties
     private lazy var playerGuessingNumberView = PlayerGuessingNumberView()
     private var subscriptions = Set<AnyCancellable>()
+    
+    // MARK: - Public properties
     var viewModel = GameViewModel()
     
+    // MARK: - Override methods
     override func loadView() {
+        
         self.view = playerGuessingNumberView
     }
 
@@ -22,12 +27,13 @@ class PlayerGuessingNumberViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         viewModel.game.computer.number = viewModel.generateRandomNumber()
-        print (viewModel.game.computer.number)
+        
         setup()
         
         playerGuessingNumberView.guessNumberButton.addTarget(self, action: #selector(guessTheNumberButtonPressed(_:)), for: .touchUpInside)
     }
     
+    // MARK: - Private methods
     private func setup() {
         viewModel.$game
             .sink { game in
@@ -45,6 +51,7 @@ class PlayerGuessingNumberViewController: UIViewController {
         }
     }
     
+    // MARK: - @objc methods
     @objc func guessTheNumberButtonPressed(_ sender: UIButton) {
         guard let inputValue = playerGuessingNumberView.numberTextField.text else { return }
         if let number = Int(inputValue) {
@@ -58,7 +65,6 @@ class PlayerGuessingNumberViewController: UIViewController {
                 showErrorAlert()
         }
     }
-    
     
     // MARK: - Navigation
    private func resultView() {
@@ -75,7 +81,7 @@ class PlayerGuessingNumberViewController: UIViewController {
     }
     
     deinit {
-        print("deallocated")
+        print("PlayerGuessingNumberViewController deinit")
     }
 }
 

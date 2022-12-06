@@ -10,11 +10,14 @@ import Combine
 
 class ComputerGuessingNumberViewController: UIViewController {
     
+    // MARK: - Private properties
     private lazy var computerGuessingNumber = ComputerGuessingNumberView()
     private var subscriptions = Set<AnyCancellable>()
     
+    // MARK: - Public properties
     var viewModel = GameViewModel()
     
+    // MARK: - Override methods
     override func loadView() {
         super.loadView()
         self.view = computerGuessingNumber
@@ -34,7 +37,8 @@ class ComputerGuessingNumberViewController: UIViewController {
         computerGuessingNumber.lessButton.addTarget(self, action: #selector(lessButtonPressed(_:)), for: .touchUpInside)
     }
 
-    func setup () {
+    // MARK: - Private methods
+   private func setup () {
         viewModel.$error
             .sink { error in
                 DispatchQueue.main.async {
@@ -52,8 +56,8 @@ class ComputerGuessingNumberViewController: UIViewController {
             }
             .store(in: &subscriptions)
     }
-                   
-
+    
+    // MARK: - @objc methods
     @objc private func greaterButtonPressed(_ sender: UIButton) {
             viewModel.validateComputerAnswer(answer: .greater)
     }
@@ -69,11 +73,11 @@ class ComputerGuessingNumberViewController: UIViewController {
         }
     }
     
-   private func playerGuessingNumber() {
+    // MARK: - Navigation
+    private func playerGuessingNumber() {
         let viewController = PlayerGuessingNumberViewController()
         viewController.viewModel = self.viewModel
         viewController.modalPresentationStyle = .fullScreen
-//        viewController.modalTransitionStyle = .coverVertical
         present(viewController, animated: true)
     }
     
@@ -82,5 +86,9 @@ class ComputerGuessingNumberViewController: UIViewController {
         let actionOK = UIAlertAction(title: "Ok", style: .default)
         alert.addAction(actionOK)
         return alert
+    }
+    
+    deinit {
+        print("ComputerGuessingNumberViewController deinit")
     }
 }
