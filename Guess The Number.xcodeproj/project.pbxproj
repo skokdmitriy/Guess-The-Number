@@ -17,6 +17,7 @@
 		1B9672F528E0A2E1004A2A02 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9672F428E0A2E1004A2A02 /* StartGameViewController.swift */; };
 		1B9672F828E0A384004A2A02 /* GuessTheNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9672F728E0A383004A2A02 /* GuessTheNumber.swift */; };
 		1B96730028E0AA95004A2A02 /* StartGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9672FF28E0AA95004A2A02 /* StartGameView.swift */; };
+		1BAC0F9529C8985D0049E6E1 /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAC0F9429C8985D0049E6E1 /* AssemblyBuilder.swift */; };
 		1BCDE2A4291ABA50004EDF49 /* ResultGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCDE2A3291ABA4F004EDF49 /* ResultGameViewController.swift */; };
 		1BCDE2A6291AC52D004EDF49 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCDE2A5291AC52D004EDF49 /* GameViewModel.swift */; };
 		1BD13FC8290EA23200DEF1C1 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD13FC7290EA23200DEF1C1 /* UILabel+Extension.swift */; };
@@ -44,6 +45,7 @@
 		1B9672F428E0A2E1004A2A02 /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 		1B9672F728E0A383004A2A02 /* GuessTheNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheNumber.swift; sourceTree = "<group>"; };
 		1B9672FF28E0AA95004A2A02 /* StartGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameView.swift; sourceTree = "<group>"; };
+		1BAC0F9429C8985D0049E6E1 /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
 		1BCDE2A3291ABA4F004EDF49 /* ResultGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGameViewController.swift; sourceTree = "<group>"; };
 		1BCDE2A5291AC52D004EDF49 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		1BD13FC7290EA23200DEF1C1 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -96,6 +98,9 @@
 		1B9672D828E09C68004A2A02 /* Guess The Number */ = {
 			isa = PBXGroup;
 			children = (
+				1BAC0F9329C898320049E6E1 /* ModuleBuilder */,
+				1BAC0F9629C89A670049E6E1 /* StartGameModule */,
+				1BAC0F9929C8A5B40049E6E1 /* EnterNumberModule */,
 				1B9672EF28E0A097004A2A02 /* Application */,
 				1B9672F028E0A109004A2A02 /* SupportingFiles */,
 				1B9672F128E0A113004A2A02 /* Resources */,
@@ -137,8 +142,6 @@
 		1B9672F228E0A19C004A2A02 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1B9672F428E0A2E1004A2A02 /* StartGameViewController.swift */,
-				1BFFB28D28E0D0080020D1EB /* EnterNumberViewController.swift */,
 				1BFFB29728E3654A0020D1EB /* ComputerGuessingNumberViewController.swift */,
 				1B3D0D8A2917E48200033C2C /* PlayerGuessingNumberViewController.swift */,
 				1BCDE2A3291ABA4F004EDF49 /* ResultGameViewController.swift */,
@@ -159,11 +162,51 @@
 		1B9672FC28E0AA58004A2A02 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1B9672FF28E0AA95004A2A02 /* StartGameView.swift */,
-				1BFFB28B28E0CC090020D1EB /* EnterNumberView.swift */,
 				1BFFB29528E347E80020D1EB /* ComputerGuessingNumberView.swift */,
 				1B3D0D842917CFC700033C2C /* PlayerGuessingNumberView.swift */,
 				1B3D0D862917E19A00033C2C /* ResultGameView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1BAC0F9329C898320049E6E1 /* ModuleBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				1BAC0F9429C8985D0049E6E1 /* AssemblyBuilder.swift */,
+			);
+			path = ModuleBuilder;
+			sourceTree = "<group>";
+		};
+		1BAC0F9629C89A670049E6E1 /* StartGameModule */ = {
+			isa = PBXGroup;
+			children = (
+				1BAC0F9729C89A8B0049E6E1 /* View */,
+			);
+			path = StartGameModule;
+			sourceTree = "<group>";
+		};
+		1BAC0F9729C89A8B0049E6E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B9672FF28E0AA95004A2A02 /* StartGameView.swift */,
+				1B9672F428E0A2E1004A2A02 /* StartGameViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1BAC0F9929C8A5B40049E6E1 /* EnterNumberModule */ = {
+			isa = PBXGroup;
+			children = (
+				1BAC0F9A29C8A5C30049E6E1 /* View */,
+			);
+			path = EnterNumberModule;
+			sourceTree = "<group>";
+		};
+		1BAC0F9A29C8A5C30049E6E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BFFB28B28E0CC090020D1EB /* EnterNumberView.swift */,
+				1BFFB28D28E0D0080020D1EB /* EnterNumberViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,6 +320,7 @@
 				1BFFB28E28E0D0080020D1EB /* EnterNumberViewController.swift in Sources */,
 				1BCDE2A6291AC52D004EDF49 /* GameViewModel.swift in Sources */,
 				1B01739C291BF33C00EF672C /* NumberValid.swift in Sources */,
+				1BAC0F9529C8985D0049E6E1 /* AssemblyBuilder.swift in Sources */,
 				1BF84033290DAA4700CC2697 /* UIButton+Extension.swift in Sources */,
 				1B96730028E0AA95004A2A02 /* StartGameView.swift in Sources */,
 				1BFFB29028E203DF0020D1EB /* AlertController.swift in Sources */,

@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = StartGameViewController()
+        let startVC = AssemblyModuleBuilder.createStartGameModule()
+        window?.rootViewController = startVC
         return true
     }
 }
