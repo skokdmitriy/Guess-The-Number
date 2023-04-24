@@ -13,7 +13,7 @@ class EnterNumberViewController: UIViewController {
     private lazy var enterNumberView = EnterNumberView()
     
     // MARK: - Public properties
-    var viewModel: GameViewModel!
+    var viewModel = GameViewModel()
 
     // MARK: - Override methods
     override func loadView() {
@@ -62,6 +62,7 @@ class EnterNumberViewController: UIViewController {
             enterNumberView.enterNumberButton.isEnabled = true
         } else {
             enterNumberView.enterNumberButton.isEnabled = false
+
         }
     }
     
