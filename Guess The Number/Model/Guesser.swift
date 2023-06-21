@@ -11,5 +11,4 @@ struct Guesser {
     var number: Int = 0
     var attemptCount: Int = 1 
     var numberGuessed: Bool = false
-
 }
